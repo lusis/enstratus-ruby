@@ -74,5 +74,5 @@ Obviously, we don't want to leave this running so we edit `delete-server` and pu
     "description"=>"Terminate 241542"}]}
 ```
 
-If you call list-servers after the job is finished, the server should be gone!
-- 
+If you call list-servers after the job is finished, the server should be gone
+ 
