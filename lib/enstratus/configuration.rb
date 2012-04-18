@@ -5,7 +5,7 @@ module Enstratus
     def initialize
       @access_key ||= '12345678'
       @secret_key ||= 'abcdefghi'
-      @endpoint ||= 'https://api.enstratus.com/api'
+      @endpoint ||= 'https://api.enstratus.com'
       @version ||= '2011-12-15'
     end
   end
