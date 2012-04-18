@@ -1,0 +1,4 @@
+es_endpoint: "https://api.enstratus.com"
+es_version: "2011-12-15"
+es_access_key: XXXXXXXXXXXXXXXXXXXXXXXXXXX
+es_secret_key: YYYYYYYYYYYYYYYYYYYYYYYYYYY
