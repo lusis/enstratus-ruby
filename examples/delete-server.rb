@@ -25,4 +25,4 @@ signature = Enstratus::RequestSigner.new({:method => 'DELETE', :path => req})
 sig = signature.sign
 
 resp = conn.delete(:headers => {"User-agent" => 'enstratus.rb', "x-esauth-access" => "#{@config['es_access_key']}", "x-esauth-timestamp" => "#{(Time.now.to_f * 1000).to_i}", "x-esauth-signature" => sig, "x-es-details" => "basic", "Accept" => "application/json"}, :query => {:reason => "#{@reason}"})
-pp JSON.parse(resp.body)
+#pp JSON.parse(resp.body)

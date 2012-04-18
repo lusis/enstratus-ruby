@@ -16,7 +16,9 @@ Other than `list-regions`,`list-servers` and `list-clouds`, all the examples req
 - replace `@region_id = "11111111"` in `list-datacenters` with the appropriate region
 - run `list-datacenters` and you should get the details back for that.
 
-Now to be able to create a server, you'll need two bits of information:
+
+# Creating/Deleting a server
+Now to be able to create a server, you'll need three bits of information:
 
 - datacenterId
 - machineImageId
@@ -47,4 +49,30 @@ To see the status of all jobs, there's a `list-jobs` script that returns:
     "jobId"=>56681,
     "status"=>"RUNNING",
     "description"=>"Launch Server enstratus.rb"}]}
+```
+
+When it's finally done, you'll see this:
+
+```json
+{"jobs"=>
+  [{"message"=>"241542",
+    "startDate"=>"2012-04-18T17:11:34.613+0000",
+    "jobId"=>56681,
+    "status"=>"COMPLETE",
+    "description"=>"Launch Server enstratus.rb",
+    "endDate"=>"2012-04-18T17:13:16.658+0000"}]}
+```
+
+Obviously, we don't want to leave this running so we edit `delete-server` and put in the machine ID. Again, you can call list-servers to get that. Delete calls do not return any content so you'll have to list jobs to see what's up:
+
+```json
+{"jobs"=>
+  [
+   {"startDate"=>"2012-04-18T17:23:54.075+0000",
+    "jobId"=>56682,
+    "status"=>"RUNNING",
+    "description"=>"Terminate 241542"}]}
+```
+
+If you call list-servers after the job is finished, the server should be gone!
 - 
