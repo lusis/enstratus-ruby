@@ -18,7 +18,7 @@ Enstratus.configure do |config|
   config.secret_key = @config['es_secret_key']
 end
 
-req = "/api/enstratus/#{@config['es_version']}/geography/DataCenter"
+req = "/api/enstratus/#{@config['es_version']}/infrastructure/MachineImage"
 conn = Excon.new "#{@config['es_endpoint']}#{req}"
 signature = Enstratus::RequestSigner.new({:method => 'GET', :path => req})
 sig = signature.sign

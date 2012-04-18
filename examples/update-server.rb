@@ -10,9 +10,9 @@ require 'json'
 require 'pp'
 
 # You'll need to change these
-@server_id = "1111111"
-@name = "new name updated"
-@label = "green"
+@server_id = ""
+@name = ""
+@label = ""
 
 update_server_json=<<-EOJ
 {"describeServer":

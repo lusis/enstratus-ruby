@@ -10,7 +10,7 @@ require 'json'
 require 'pp'
 
 # Change this
-@server_id = "1111111"
+@server_id = ""
 @reason = "test system shutdown"
 
 @config = YAML.load(File.open("../config.yaml", 'r') {|f| f.read})
@@ -25,5 +25,4 @@ signature = Enstratus::RequestSigner.new({:method => 'DELETE', :path => req})
 sig = signature.sign
 
 resp = conn.delete(:headers => {"User-agent" => 'enstratus.rb', "x-esauth-access" => "#{@config['es_access_key']}", "x-esauth-timestamp" => "#{(Time.now.to_f * 1000).to_i}", "x-esauth-signature" => sig, "x-es-details" => "basic", "Accept" => "application/json"}, :query => {:reason => "#{@reason}"})
-puts resp.headers
 pp JSON.parse(resp.body)

@@ -9,8 +9,6 @@ require 'openssl'
 require 'json'
 require 'pp'
 
-# You'll need to change this
-@region_id = ""
 
 @config = YAML.load(File.open("../config.yaml", 'r') {|f| f.read})
 Enstratus.configure do |config|
@@ -18,7 +16,7 @@ Enstratus.configure do |config|
   config.secret_key = @config['es_secret_key']
 end
 
-req = "/api/enstratus/#{@config['es_version']}/geography/DataCenter"
+req = "/api/enstratus/#{@config['es_version']}/geography/Cloud"
 conn = Excon.new "#{@config['es_endpoint']}#{req}"
 signature = Enstratus::RequestSigner.new({:method => 'GET', :path => req})
 sig = signature.sign
@@ -26,5 +24,5 @@ sig = signature.sign
 # This is one of the 'annoying' parts of the API
 # The sig is calculated against path WITHOUT query params
 # but some requests REQUIRE query params
-resp = conn.get(:headers => {"User-agent" => 'enstratus.rb', "x-esauth-access" => "#{@config['es_access_key']}", "x-esauth-timestamp" => "#{(Time.now.to_f * 1000).to_i}", "x-esauth-signature" => sig, "x-es-details" => "basic", "Accept" => "application/json"}, :query => {:regionId => "#{@region_id}"})
+resp = conn.get(:headers => {"User-agent" => 'enstratus.rb', "x-esauth-access" => "#{@config['es_access_key']}", "x-esauth-timestamp" => "#{(Time.now.to_f * 1000).to_i}", "x-esauth-signature" => sig, "x-es-details" => "basic", "Accept" => "application/json"})
 pp JSON.parse(resp.body)

@@ -10,14 +10,15 @@ require 'json'
 require 'pp'
 
 # You'll need to change these
-@machine_image_id = "11111111"
-@datacenter_id = "111"
+@machine_image_id = ""
+@datacenter_id = ""
+@product_id = ""
 
 new_server_json=<<-EOJ
 {"launch":
   [
     {
-      "product":{"productId":"t1.micro"},
+      "product":{"productId":"#{@product_id}"},
       "machineImage":{"machineImageId":#{@machine_image_id}},
       "description":"Created by enstratus.rb",
       "name":"enstratus.rb",
