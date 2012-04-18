@@ -36,13 +36,13 @@ This will give us a list of valid products for the image we want to use.
 
 Now that you have all that information (datacenterID,machineImageId and productID), you can update create-server and run it. Server creation is an async process. Your response will look something like this:
 
-```json
+```ruby
 {"jobs"=>[{"jobId"=>56681, "status"=>"RUNNING"}]}
 ```
 
 To see the status of all jobs, there's a `list-jobs` script that returns:
 
-```json
+```ruby
 {"jobs"=>
   [
    {"startDate"=>"2012-04-18T17:11:34.613+0000",
@@ -53,7 +53,7 @@ To see the status of all jobs, there's a `list-jobs` script that returns:
 
 When it's finally done, you'll see this:
 
-```json
+```ruby
 {"jobs"=>
   [{"message"=>"241542",
     "startDate"=>"2012-04-18T17:11:34.613+0000",
@@ -65,7 +65,7 @@ When it's finally done, you'll see this:
 
 Obviously, we don't want to leave this running so we edit `delete-server` and put in the machine ID. Again, you can call list-servers to get that. Delete calls do not return any content so you'll have to list jobs to see what's up:
 
-```json
+```ruby
 {"jobs"=>
   [
    {"startDate"=>"2012-04-18T17:23:54.075+0000",
