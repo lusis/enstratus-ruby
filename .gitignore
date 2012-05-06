@@ -3,3 +3,4 @@
 Gemfile.lock
 pkg/*
 config.yaml
+examples/load.rb
