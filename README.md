@@ -36,6 +36,9 @@ Enstratus::Infrastructure::MachineImage.all :regionId => some_region_id_from_abo
 
 Again, currently read-only operations (so any `GET` call documented in `Geography` or `Infrastructure` is implemented.
 
+
+**OLD INFORMATION FOLLOWS BELOW**
+
 # Setup
 
 - Copy config-sample.yaml to config.yaml
