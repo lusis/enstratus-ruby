@@ -3,7 +3,7 @@ module Enstratus
 end
 
 require 'enstratus/automation/configuration_management_account'
-require 'enstratus/automation/configuration_management_server'
+require 'enstratus/automation/configuration_management_service'
 require 'enstratus/automation/configuration_management_system'
 require 'enstratus/automation/data_source'
 require 'enstratus/automation/data_source_backup'
