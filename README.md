@@ -3,6 +3,8 @@ This will soon be the gem to use for interacting with the enStratus API.
 
 ## Currently Implemented GET operations (by resource group)
 
+_testing against enStratus SaaS api version 2012-02-29_
+
 - Admin (all)
 - Anayltics (all)
 - Finance (all)
