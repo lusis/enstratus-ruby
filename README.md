@@ -10,7 +10,8 @@ _testing against enStratus SaaS api version 2012-02-29_
 - Finance (all)
 - Geography (all)
 - Infrastructure (all)
-- Automation (deployment, tier)
+- Automation (all)
+- Platform (all)
 
 ## status - 2012/05/06
 I'm currently adding read-only support for all resources. The actual structure of a resource class may change.
