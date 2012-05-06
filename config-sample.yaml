@@ -1,4 +1,4 @@
-debug: true
+debug: false
 endpoint: "https://api.enstratus.com"
 version: "2012-02-29"
 access_key: XXXXXXXXXXXXXXXXXXXXXXXXXXX
