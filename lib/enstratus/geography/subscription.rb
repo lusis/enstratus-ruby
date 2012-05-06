@@ -1,0 +1,51 @@
+module Enstratus::Geography
+  class Subscription < Enstratus::Resource
+
+    attribute :region_id
+    attribute :custom_images
+    attribute :custom_networks
+    attribute :custom_subnets
+    attribute :hypervisor_analytics
+    attribute :ip_addresses_forwarded
+    attribute :load_balancer_address_assigned
+    attribute :load_balancer_create_with_server
+    attribute :load_balancer_data_center_limited
+    attribute :max_load_balancer_listeners
+    attribute :network_data_center_constrained
+    attribute :network_with_subnets
+    attribute :private_image_sharing
+    attribute :private_ip_addresses_assigned
+    attribute :private_ip_addresses_requestable
+    attribute :private_snapshot_sharing
+    attribute :public_image_library
+    attribute :public_image_sharing
+    attribute :public_ip_addresses_assigned
+    attribute :public_ip_addresses_requestable
+    attribute :public_snapshot_sharing
+    attribute :rdbms_firewalled
+    attribute :rdbms_ha
+    attribute :rdbms_la
+    attribute :rdbms_maintenance
+    attribute :rdbms_snapshots
+    attribute :server_key_bootstrapped
+    attribute :subnet_data_center_constrained
+    attribute :subscribed_auto_scaling
+    attribute :subscribed_blob_store
+    attribute :subscribed_cd_n
+    attribute :subscribed_dn_s
+    attribute :subscribed_email
+    attribute :subscribed_firewall
+    attribute :subscribed_kv_db
+    attribute :subscribed_load_balancer
+    attribute :subscribed_machine_image
+    attribute :subscribed_mq
+    attribute :subscribed_network
+    attribute :subscribed_push_notification
+    attribute :subscribed_rd_bm_s
+    attribute :subscribed_static_ip
+    attribute :subscribed_server
+    attribute :subscribed_snapshot
+    attribute :subscribed_volume
+    attribute :subscribed_vp_n
+  end
+end
